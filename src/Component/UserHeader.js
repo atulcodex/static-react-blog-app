@@ -11,7 +11,7 @@ class UserHeader extends React.Component{
 
     render()
     {
-        const user = this.props.fetchUser.find( user => user.id === this.props.id );
+        const user = this.props.user.find( user => user.id === this.props.id );
 
         if(!user)
         {
