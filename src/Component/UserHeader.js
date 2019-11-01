@@ -19,7 +19,7 @@ class UserHeader extends React.Component{
         }
         
         return(
-            <div>{user.name}</div>
+            <div className="header">{user.name}</div>
         );
     };
 };
