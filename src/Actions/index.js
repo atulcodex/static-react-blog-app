@@ -4,7 +4,9 @@ import JsonPlaceholder from '../APIS/JsonPlaceholder';
 export const fetchPostsAndUsers = () => async (dispatch, getState) => {
     await dispatch(fetchPosts());
     
-    _.map(getState().posts, 'userId');  //getState will give access of our reducers
+    const userIds = _.uniq(_.map(getState().posts, 'userId'));  //getState will give access of our reducers
+
+    console.log(userIds);
 };
 
 export const fetchPosts = () => async (dispatch) => {
