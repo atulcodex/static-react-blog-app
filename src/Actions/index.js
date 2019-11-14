@@ -6,7 +6,7 @@ export const fetchPostsAndUsers = () => async (dispatch, getState) => {
     
     const userIds = _.uniq(_.map(getState().posts, 'userId'));  //getState will give access of our reducers
 
-    console.log(userIds);
+    userIds.forEach(id => dispatch(fetchUser(id)));
 };
 
 export const fetchPosts = () => async (dispatch) => {
