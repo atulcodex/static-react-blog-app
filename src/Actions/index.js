@@ -1,10 +1,10 @@
 import _ from 'lodash'; 
 import JsonPlaceholder from '../APIS/JsonPlaceholder';
 
-export const fetchPostsAndUsers = () => async (dispatch) => {
-    console.log("going to fetchPosts");
+export const fetchPostsAndUsers = () => async (dispatch, getState) => {
     await dispatch(fetchPosts());
-    console.log("already to fetchPosts");
+    
+    console.log(getState().posts);  //getState will give access of our reducers
 };
 
 export const fetchPosts = () => async (dispatch) => {
